@@ -29,16 +29,13 @@
                 android:id="@+id/qr_view"
                 android:layout_width="250dp"
                 android:layout_height="250dp"
-                android:background="@color/pitchblack"
                 />
             <TextView
                 android:id="@+id/qr_view_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Check IN/OUT"
-                android:textColor="@color/white"
                 android:textSize="35dp"
-                android:fontFamily="@font/genos_bold"
                 android:layout_marginTop="20dp"
                 />
 
