@@ -7,6 +7,7 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+
     <com.google.android.material.appbar.AppBarLayout
         android:alpha="0"
         android:layout_width="match_parent"

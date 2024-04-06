@@ -29,7 +29,10 @@
     </style>
 
 
-
+    <style name="circleImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">20%</item>
+    </style>
 
 
     <style name="Theme.HackfestApp.AppBarOverlay" parent = "Theme.Material3.Dark">

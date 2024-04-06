@@ -17,12 +17,13 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <ImageView
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/org_image"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:background="@color/black"
             android:contentDescription="image"
+            app:shapeAppearanceOverlay="@style/circleImageView"
             android:src="@drawable/baseline_person_24_white" />
 
         <LinearLayout
@@ -38,7 +39,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Org Name"
-                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
@@ -48,7 +48,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="Pdf Link"
-                android:textColor="@color/white"
                 android:textSize="15sp" />
 
         </LinearLayout>
