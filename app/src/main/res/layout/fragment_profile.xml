@@ -28,20 +28,19 @@
                     android:id="@+id/teamName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/genos_bold"
                     android:text="TEAM"
                     android:textAlignment="center"
-                    android:textColor="@color/white"
                     android:textSize="35dp"
                     android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="20dp"
-                    android:src="@drawable/baseline_person_24_white"
-                    app:layout_constraintTop_toBottomOf="@+id/hackfest_text" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageView"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="100dp"-->
+<!--                    android:layout_marginTop="20dp"-->
+<!--                    android:src="@drawable/baseline_person_24_white"-->
+<!--                    app:layout_constraintTop_toBottomOf="@+id/hackfest_text"-->
+<!--                    app:tint="@color/black" />-->
 
 
                 <TextView
@@ -49,9 +48,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:fontFamily="@font/genos_light"
                     android:text="name"
-                    android:textColor="@color/white"
                     android:textSize="35dp" />
 
 
@@ -60,68 +57,64 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:fontFamily="@font/genos_light"
                     android:text="position"
-                    android:textColor="@color/white"
                     android:textSize="25dp" />
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:elevation="20dp"
-                    app:cardCornerRadius="30dp">
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/pitchblack"
+                        android:background="@drawable/counter"
                         android:padding="15dp">
 
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:src="@drawable/baseline_call_24_white" />
+                            android:src="@drawable/baseline_call_24_white"
+                            app:tint="@color/black" />
 
                         <TextView
                             android:id="@+id/Mobile"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:fontFamily="@font/genos_light"
                             android:text="Phone No."
-                            android:textColor="@color/white"
-                            android:textSize="25dp" />
+                            android:textSize="20sp"/>
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:elevation="20dp"
-                    app:cardCornerRadius="30dp">
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/pitchblack"
+                        android:background="@drawable/counter"
                         android:padding="15dp">
 
                         <ImageView
                             android:layout_width="30dp"
                             android:layout_height="30dp"
-                            android:src="@drawable/baseline_email_24" />
+                            android:src="@drawable/baseline_email_24"
+                            app:tint="@color/black" />
 
                         <TextView
                             android:id="@+id/Email"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="10dp"
-                            android:fontFamily="@font/genos_light"
                             android:text="Email"
-                            android:textColor="@color/white"
-                            android:textSize="25dp" />
+                            android:textSize="20sp" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -129,26 +122,29 @@
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="20dp"
-                    android:elevation="20dp"
-                    app:cardCornerRadius="30dp">
+                    app:cardElevation="5dp"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/pitchblack"
-                        android:gravity="center_horizontal"
+                        android:background="@drawable/counter"
                         android:padding="15dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:src="@drawable/baseline_account_balance_24"/>
 
                         <TextView
                             android:id="@+id/Organization"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/genos_light"
                             android:text="organization"
+                            android:layout_marginStart="10dp"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textSize="25dp" />
+                            android:textSize="20sp" />
 
                     </LinearLayout>
 
@@ -162,106 +158,14 @@
                 android:layout_below="@+id/ll"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20dp"
                 android:background="@drawable/button_background"
-                android:fontFamily="@font/genos_light"
-                android:padding="10dp"
+                android:padding="8dp"
                 android:text="Logout"
                 android:textColor="@color/white"
-                android:textSize="25dp" />
+                android:textSize="22sp" />
 
 
         </RelativeLayout>
-
-        <com.google.android.material.circularreveal.cardview.CircularRevealCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/counter"
-            app:cardBackgroundColor="@color/cardview_light_background"
-            app:cardCornerRadius="10dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:orientation="horizontal"
-                    android:id="@+id/ll_team_name"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lexend"
-                        android:text="TEAM:     "
-                        android:textSize="32sp" />
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/lexend"
-                        android:text="Avengers"
-                        android:textSize="26sp" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:src="@drawable/logo_new"
-                    android:id="@+id/iv_profile"
-                    app:layout_constraintTop_toTopOf="@id/ll_leader_name"
-                    app:layout_constraintBottom_toBottomOf="@id/ll_leader_name"
-                    app:layout_constraintEnd_toStartOf="@id/ll_leader_name"
-
-                    />
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:id="@+id/ll_leader_name"
-                    app:layout_constraintTop_toBottomOf="@id/ll_team_name"
-                    app:layout_constraintStart_toEndOf="@+id/iv_profile"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:layout_marginTop="10dp"
-                    android:orientation="vertical">
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/lexend"
-                        android:text="LEADER NAME"
-                        android:textSize="24sp" />
-
-
-                    <androidx.appcompat.widget.AppCompatTextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:fontFamily="@font/lexend"
-                        android:text="Proffesional"
-                        android:textSize="20sp" />
-
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-        </com.google.android.material.circularreveal.cardview.CircularRevealCardView>
-
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
