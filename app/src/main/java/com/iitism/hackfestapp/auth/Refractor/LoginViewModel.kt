@@ -1,5 +1,4 @@
 package com.iitism.hackfestapp.auth.Refractor
-
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities

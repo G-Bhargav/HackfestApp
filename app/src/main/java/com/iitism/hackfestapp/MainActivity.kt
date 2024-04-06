@@ -9,7 +9,9 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import android.view.Gravity
+import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
+import androidx.compose.runtime.internal.enableLiveLiterals
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.NavArgument
@@ -31,9 +33,9 @@ class MainActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         val playerEmail=intent.getStringExtra("playerEmail")
         Log.d("mainActivityData",playerEmail.toString())
 
@@ -66,19 +68,19 @@ class MainActivity : AppCompatActivity() {
             binding.drawerLayout.openDrawer(GravityCompat.START)
         }
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-            binding.appBarMain.titleactionbar.text = when (destination.id) {
-                R.id.nav_profile -> "PROFILE"
-                R.id.nav_aboutus -> "ABOUT US"
-                R.id.nav_contactus -> "CONTACT US"
-                R.id.nav_noticeboard -> "NOTICE BOARD"
-                R.id.nav_problemstatement -> "PROBLEM STATEMENT"
-                R.id.nav_rules -> "RULES"
-                R.id.nav_timeline -> "TIMELINE"
-                R.id.nav_scanqr -> "SCAN QR"
-                R.id.nav_home -> "HOME"
-                R.id.nav_gatepass -> "GATE PASS"
-                else -> "HACKFEST"
-            }
+//            binding.appBarMain.titleactionbar.text = when (destination.id) {
+//                R.id.nav_profile -> "PROFILE"
+//                R.id.nav_aboutus -> "ABOUT US"
+//                R.id.nav_contactus -> "CONTACT US"
+//                R.id.nav_noticeboard -> "NOTICE BOARD"
+//                R.id.nav_problemstatement -> "PROBLEM STATEMENT"
+//                R.id.nav_rules -> "RULES"
+//                R.id.nav_timeline -> "TIMELINE"
+//                R.id.nav_scanqr -> "SCAN QR"
+//                R.id.nav_home -> "HOME"
+//                R.id.nav_gatepass -> "GATE PASS"
+//                else -> "HACKFEST"
+//            }
 
         }
         navView.setupWithNavController(navController)

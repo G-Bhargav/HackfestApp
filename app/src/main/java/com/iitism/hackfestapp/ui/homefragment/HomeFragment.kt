@@ -32,7 +32,7 @@ class HomeFragment : Fragment() {
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding : FragmentHomeBinding
     private lateinit var videoView: VideoView
-    private val path = "android.resource://com.iitism.hackfestapp/"+R.raw.bgm
+    private val path = "android.resource://com.iitism.hackfestapp/"+R.raw.hackfesttrailer
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,7 +52,11 @@ class HomeFragment : Fragment() {
         videoView.setVideoPath(path)
         videoView.start()
         videoView.setOnCompletionListener {
-            videoView.start()
+            //videoView.start()
+        }
+        videoView.setOnClickListener {
+            if(videoView.isPlaying) videoView.pause()
+            else videoView.resume()
         }
 
         countDownHackfestStart()
@@ -74,7 +78,7 @@ class HomeFragment : Fragment() {
                 try {
                     val currentDate = Date()
                     val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-                    val futureDate: Date = dateFormat.parse("2023-4-7 19:00:00")
+                    val futureDate: Date = dateFormat.parse("2024-4-19 12:00:00")
                     if (!currentDate.after(futureDate)) {
                         var diff: Long = (futureDate.getTime()
                                 - currentDate.getTime())
@@ -114,7 +118,7 @@ class HomeFragment : Fragment() {
                 try {
                     val currentDate = Date()
                     val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-                    val futureDate: Date = dateFormat.parse("2023-4-3 07:00:00")
+                    val futureDate: Date = dateFormat.parse("2024-4-21 12:00:00")
                     if (!currentDate.after(futureDate)) {
                         var diff: Long = (futureDate.getTime()
                                 - currentDate.getTime())
