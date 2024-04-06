@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="80dp"
-    android:background="@color/black"
+    android:background="@color/white"
     tools:context=".ui.timelinefragment.TimelineFragment">
 
     <LinearLayout
@@ -38,17 +38,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="29"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_bold"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="Mar"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                 </LinearLayout>
@@ -72,9 +72,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="CodeIsm"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
                 </RelativeLayout>
 
@@ -106,17 +106,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="30"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_bold"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="Mar"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                 </LinearLayout>
@@ -140,9 +140,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="Start PS Evaluations"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
                 </RelativeLayout>
 
@@ -172,17 +172,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="1-2"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_bold"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="Mar"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                 </LinearLayout>
@@ -206,9 +206,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="Arka"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
                 </RelativeLayout>
 
@@ -239,17 +239,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="3"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_bold"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="Apr"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                 </LinearLayout>
@@ -273,9 +273,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="Outside Registeration Close"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
                 </RelativeLayout>
 
@@ -306,17 +306,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="4"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_bold"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="Apr"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                 </LinearLayout>
@@ -340,9 +340,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="End Evaluation of PS"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
                 </RelativeLayout>
 
@@ -373,17 +373,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="5"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_bold"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="Apr"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                 </LinearLayout>
@@ -407,9 +407,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="Announcement of Outside Participating Teams"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
                 </RelativeLayout>
 
@@ -440,17 +440,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="6"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_bold"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="Apr"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                 </LinearLayout>
@@ -474,9 +474,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="Announcemnet of Inside Participating team"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
                 </RelativeLayout>
 
@@ -507,17 +507,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="7"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_bold"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="Apr"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                 </LinearLayout>
@@ -541,9 +541,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="Opening Ceremony"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
                 </RelativeLayout>
 
@@ -574,17 +574,17 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="8-9"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="@font/genos_bold"
+                        android:fontFamily="@font/lexend_bold"
                         android:text="Apr"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
 
                 </LinearLayout>
@@ -608,9 +608,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="Hack"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="25dp" />
                 </RelativeLayout>
 
@@ -633,10 +633,10 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/genos_bold"
+                    android:fontFamily="@font/lexend_bold"
                     android:text="Additional events will be announced on the notice board."
                     android:textAlignment="center"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="25dp" />
             </RelativeLayout>
 
