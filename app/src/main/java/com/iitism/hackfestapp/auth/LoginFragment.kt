@@ -92,15 +92,48 @@ class loginFragment : BaseFragment<LoginViewModel,FragmentLoginBinding, LoginRep
                 }
                 Toast.makeText(context,"Password is required",Toast.LENGTH_LONG).show()
             }else{
-                if(viewModel.isNetworkAvailable()){
-                    viewModel.login(teamName,password)
-                }
-                else{
-                    Toast.makeText(context, "Network Error",Toast.LENGTH_SHORT).show()
-                    progressBar.visibility = View.GONE
-                }
-            }
+                val dataObject = Data(
+                    Country = "India",
+                    Domain = "Technology",
+                    Player_Mobile = 1234567890,
+                    Player_Name = "Sai Shashank",
+                    Player_Email = "shashank@gmail.com",
+                    Player_Organisation = "CDC Organization",
+                    Player_Type = "Professional",
+                    Team_Id = "123456",
+                    Team_Name = "Avengers",
+                    password = "securePassword123",
+                    problem_statement_and_solution = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+                )
 
+                // Then, create an instance of the LoginResponse class using the data object
+                val loginResponse = LoginResponse(
+                    data = dataObject,
+                    message = "Login successful"
+                )
+
+                val it=loginResponse;
+
+                Log.d("Login", it.data.toString())
+                //                    val user= User(it.value.data.Player_Email,it.value.data.Team_Name,it.value.data.Player_Mobile,it.value.data.problem_statement_and_solution,it.value.data.Player_Organisation)
+                editor?.apply {
+                    putString("teamId",it.data.Team_Id.toString())
+                    putString("email",it.data.Player_Email.toString())
+                    putString("teamName",it.data.Team_Name)
+                    putString("playerName",it.data.Player_Name)
+                    putString("playerType",it.data.Player_Type)
+                    putLong("playerMobile",it.data.Player_Mobile)
+                    putString("problemStatement",it.data.problem_statement_and_solution)
+                    putString("playerOrganization",it.data.Player_Organisation)
+                    apply()
+                }
+                val visibility=if(progressBar.visibility==View.GONE) View.VISIBLE
+                else View.GONE
+                progressBar.visibility=visibility
+                Toast.makeText(requireContext(),"Welcome Back to ${it.data.Team_Name}",Toast.LENGTH_SHORT).show()
+                startActivity(intent)
+                this.activity?.finish()
+            }
         }
     }
 

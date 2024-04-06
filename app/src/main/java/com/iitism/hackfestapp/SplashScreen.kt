@@ -17,7 +17,6 @@ class SplashScreen : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivitySplashScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -30,7 +29,7 @@ class SplashScreen : AppCompatActivity() {
             val intent = Intent(this, authActivity::class.java)
             startActivity(intent)
             finish()
-        }, 3530)
+        }, 3500)
 
     }
 

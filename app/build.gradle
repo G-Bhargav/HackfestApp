@@ -15,14 +15,14 @@ android {
         }
     }
     namespace 'com.iitism.hackfestapp'
-    compileSdk 33
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.iitism.hackfestapp"
         minSdk 21
-        targetSdk 33
-        versionCode 4
-        versionName "2.1"
+        targetSdk 34
+        versionCode 5
+        versionName "3.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         signingConfig signingConfigs.release
@@ -51,7 +51,7 @@ android {
 dependencies {
     implementation 'androidx.core:core-ktx:1.9.0'
     implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.8.0'
+    implementation 'com.google.android.material:material:1.11.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'
