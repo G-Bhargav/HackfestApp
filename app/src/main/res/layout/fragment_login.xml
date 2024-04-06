@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    android:background="@color/background"
     tools:context=".auth.loginFragment">
 
     <RelativeLayout
@@ -17,25 +18,94 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/genos_bold"
-                android:text="HACKFEST"
-                android:textAlignment="center"
-                android:textColor="@color/white"
-                android:textSize="60dp"
-                android:textStyle="bold" />
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:gravity="center"
+                    android:text="H"
+                    android:textAlignment="center"
+                    android:textColor="@color/gblue"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="A"
+                    android:textAlignment="center"
+                    android:textColor="@color/gred"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="C"
+                    android:textAlignment="center"
+                    android:textColor="@color/gyellow"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="K"
+                    android:textAlignment="center"
+                    android:textColor="@color/ggreen"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="F"
+                    android:textAlignment="center"
+                    android:textColor="@color/gblue"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="E"
+                    android:textAlignment="center"
+                    android:textColor="@color/gred"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="S"
+                    android:textAlignment="center"
+                    android:textColor="@color/gyellow"
+                    android:textSize="50sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lexend"
+                    android:text="T"
+                    android:textAlignment="center"
+                    android:textColor="@color/ggreen"
+                    android:textSize="50sp" />
+            </LinearLayout>
 
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="IIT(ISM) Dhanbad"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="30dp"
                 android:textStyle="bold"
-                android:fontFamily="@font/genos_light"/>
+                android:fontFamily="@font/lexend"/>
 
 
             <EditText
@@ -48,10 +118,10 @@
                 android:drawableStart="@drawable/person"
                 android:drawablePadding="20dp"
                 android:hint="Player Email"
-                android:fontFamily="@font/genos_light"
+                android:fontFamily="@font/lexend"
                 android:padding="20dp"
                 android:textAlignment="textStart"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textColorHint="@color/gray"
                 android:textCursorDrawable="@drawable/edit_text_cursor"
                 android:cursorVisible="true"
@@ -70,11 +140,11 @@
                 android:hint="Password"
                 android:padding="20dp"
                 android:textAlignment="textStart"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textColorHint="@color/gray"
                 android:textCursorDrawable="@drawable/edit_text_cursor"
                 android:textSize="25sp"
-                android:fontFamily="@font/genos_light"
+                android:fontFamily="@font/lexend"
                 />
 
 
@@ -101,17 +171,17 @@
                 android:text="Login"
                 android:textColor="@color/white"
                 android:textSize="25dp"
-                android:fontFamily="@font/genos_light"/>
+                android:fontFamily="@font/lexend"/>
 
         </LinearLayout>
 
-    <include layout="@layout/loading_screen"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone"
-        android:id="@+id/loading_card"
-        />
+        <include layout="@layout/loading_screen"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            android:id="@+id/loading_card"
+            />
 
     </RelativeLayout>
 
