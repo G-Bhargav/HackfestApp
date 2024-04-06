@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_final2"
+    android:background="@drawable/car_final"
     android:fillViewport="true"
     android:orientation="vertical"
     tools:context=".ui.homefragment.HomeFragment">
