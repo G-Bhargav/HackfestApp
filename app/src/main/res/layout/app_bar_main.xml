@@ -7,13 +7,6 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
-    <ImageButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@color/transparent"
-        android:contentDescription="Menu"
-        android:src="@drawable/baseline_menu_24"
-        app:tint="@color/black" />
 
     <com.google.android.material.appbar.AppBarLayout
         android:alpha="0"
