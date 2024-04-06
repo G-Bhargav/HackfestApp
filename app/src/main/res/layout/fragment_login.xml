@@ -114,16 +114,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="100dp"
-                android:background="@drawable/edit_text_style"
+
                 android:drawableStart="@drawable/person"
                 android:drawablePadding="20dp"
                 android:hint="Player Email"
+                android:background="@drawable/counter"
                 android:fontFamily="@font/lexend"
                 android:padding="20dp"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gray"
-                android:textCursorDrawable="@drawable/edit_text_cursor"
+
                 android:cursorVisible="true"
                 android:textSize="25sp"
                 android:inputType="text"/>
@@ -134,15 +135,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/edit_text_style"
+
                 android:drawableStart="@drawable/lock"
                 android:drawablePadding="20dp"
                 android:hint="Password"
+                android:background="@drawable/counter"
                 android:padding="20dp"
                 android:textAlignment="textStart"
                 android:textColor="@color/black"
                 android:textColorHint="@color/gray"
-                android:textCursorDrawable="@drawable/edit_text_cursor"
+
                 android:textSize="25sp"
                 android:fontFamily="@font/lexend"
                 />
