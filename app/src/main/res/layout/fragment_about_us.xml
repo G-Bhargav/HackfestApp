@@ -4,9 +4,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.aboutus.AboutUsFragment">
+    tools:context=".ui.aboutus.AboutUsFragment"
+    android:background="@drawable/car_final">
 
-    <androidx.recyclerview.widget.RecyclerView
+
+<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_marginTop="80dp"
         android:layout_width="match_parent"

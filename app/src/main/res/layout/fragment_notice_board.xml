@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.noticeboardfragment.NoticeBoardFragment">
+    tools:context=".ui.noticeboardfragment.NoticeBoardFragment"
+    android:background="@drawable/car_final">
 
-    <include layout="@layout/loading_screen"
+
+<include layout="@layout/loading_screen"
         android:id="@+id/loading_card"
         android:layout_centerInParent="true"
         android:visibility="gone"

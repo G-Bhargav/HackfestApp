@@ -8,7 +8,7 @@ plugins {
 android {
     signingConfigs {
         release {
-            storeFile file('C:\\Users\\Ansh\\Desktop\\hackfest.jks')
+            storeFile file('/Users/shashank/Development/AndroidStudioProjects/hackfestApp/app/build.gradle')
             storePassword 'hackfest'
             keyAlias 'key0'
             keyPassword 'hackfest'
@@ -20,7 +20,7 @@ android {
     defaultConfig {
         applicationId "com.iitism.hackfestapp"
         minSdk 21
-        targetSdk 34
+        targetSdk 33
         versionCode 5
         versionName "3.0"
 
