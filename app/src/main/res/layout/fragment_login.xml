@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@color/background"
+    android:background="@drawable/car_final"
     tools:context=".auth.loginFragment">
 
     <RelativeLayout
@@ -26,75 +26,83 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/lexend"
+                    android:fontFamily="@font/lexend_bold"
                     android:gravity="center"
+                    
                     android:text="H"
                     android:textAlignment="center"
                     android:textColor="@color/gblue"
-                    android:textSize="50sp" />
+                    android:textSize="60sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/lexend"
+                    android:fontFamily="@font/lexend_bold"
+                    
                     android:text="A"
                     android:textAlignment="center"
                     android:textColor="@color/gred"
-                    android:textSize="50sp" />
+                    android:textSize="60sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/lexend"
+                    android:fontFamily="@font/lexend_bold"
+                    
                     android:text="C"
                     android:textAlignment="center"
                     android:textColor="@color/gyellow"
-                    android:textSize="50sp" />
+                    android:textSize="60sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/lexend"
+                    android:fontFamily="@font/lexend_bold"
+                    
                     android:text="K"
                     android:textAlignment="center"
                     android:textColor="@color/ggreen"
-                    android:textSize="50sp" />
+                    android:textSize="60sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/lexend"
+                    android:fontFamily="@font/lexend_bold"
+                    
                     android:text="F"
                     android:textAlignment="center"
                     android:textColor="@color/gblue"
-                    android:textSize="50sp" />
+                    android:textSize="60sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/lexend"
+                    android:fontFamily="@font/lexend_bold"
+                    
                     android:text="E"
                     android:textAlignment="center"
                     android:textColor="@color/gred"
-                    android:textSize="50sp" />
+                    android:textSize="60sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/lexend"
+                    android:fontFamily="@font/lexend_bold"
+                    
                     android:text="S"
                     android:textAlignment="center"
                     android:textColor="@color/gyellow"
-                    android:textSize="50sp" />
+                    android:textSize="60sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/lexend"
+                    android:fontFamily="@font/lexend_bold"
+                    
                     android:text="T"
                     android:textAlignment="center"
                     android:textColor="@color/ggreen"
-                    android:textSize="50sp" />
+                    android:textSize="60sp" />
             </LinearLayout>
 
 
@@ -117,7 +125,7 @@
 
                 android:drawableStart="@drawable/person"
                 android:drawablePadding="20dp"
-                android:hint="Player Email"
+                android:hint="Team Name"
                 android:background="@drawable/counter"
                 android:fontFamily="@font/lexend"
                 android:padding="20dp"
@@ -164,7 +172,7 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/LoginButton"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="40dp"
                 android:layout_marginTop="100dp"

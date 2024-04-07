@@ -1,28 +1,42 @@
 package com.iitism.hackfestapp
 
-import android.content.res.Resources
-import android.graphics.BlendMode
-import android.content.Context
+import android.app.Dialog
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import android.view.Gravity
+import android.view.ViewGroup
+import android.view.Window
+import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
-import androidx.compose.runtime.internal.enableLiveLiterals
+import androidx.appcompat.app.AppCompatActivity
+import android.graphics.Color
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.NavArgument
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
-import com.iitism.hackfestapp.databinding.ActivityMainBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import com.iitism.hackfestapp.auth.User
+import com.iitism.hackfestapp.databinding.ActivityMainBinding
+import com.iitism.hackfestapp.ui.aboutus.AboutUsFragment
+import com.iitism.hackfestapp.ui.adminscanqr.AdminScanQrFragment
+import com.iitism.hackfestapp.ui.contactus.ContactUsFragment
+import com.iitism.hackfestapp.ui.gatepass.GatePassFragment
+import com.iitism.hackfestapp.ui.homefragment.HomeFragment
+import com.iitism.hackfestapp.ui.noticeboardfragment.NoticeBoardFragment
+import com.iitism.hackfestapp.ui.problemstatement.ProblemStatementFragment
 import com.iitism.hackfestapp.ui.profilefragment.ProfileFragment
+import com.iitism.hackfestapp.ui.rules.RulesFragment
+import com.iitism.hackfestapp.ui.timelinefragment.TimelineFragment
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,14 +53,23 @@ class MainActivity : AppCompatActivity() {
         val playerEmail=intent.getStringExtra("playerEmail")
         Log.d("mainActivityData",playerEmail.toString())
 
-
-
-
-
         val drawerLayout:DrawerLayout  = binding.drawerLayout
         val navView:NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
+        val bottomNavigationView: BottomNavigationView=binding.appBarMain.bottomNavigationView;
 
+        bottomNavigationView.setSelectedItemId(R.id.nav_home);
+
+        bottomNavigationView.setOnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.nav_gatepass->replacefragment(GatePassFragment())
+                R.id.nav_timeline->replacefragment(TimelineFragment())
+                R.id.nav_home->replacefragment(HomeFragment())
+                R.id.nav_problemstatement->replacefragment(ProblemStatementFragment())
+                R.id.nav_noticeboard->replacefragment(NoticeBoardFragment())
+            }
+            true
+        }
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
@@ -65,32 +88,27 @@ class MainActivity : AppCompatActivity() {
             drawerLayout
         )
         binding.appBarMain.menuButton.setOnClickListener{
-            binding.drawerLayout.openDrawer(GravityCompat.START)
+            replacefragment(ProfileFragment());
         }
-        navController.addOnDestinationChangedListener { controller, destination, arguments ->
-//            binding.appBarMain.titleactionbar.text = when (destination.id) {
-//                R.id.nav_profile -> "PROFILE"
-//                R.id.nav_aboutus -> "ABOUT US"
-//                R.id.nav_contactus -> "CONTACT US"
-//                R.id.nav_noticeboard -> "NOTICE BOARD"
-//                R.id.nav_problemstatement -> "PROBLEM STATEMENT"
-//                R.id.nav_rules -> "RULES"
-//                R.id.nav_timeline -> "TIMELINE"
-//                R.id.nav_scanqr -> "SCAN QR"
-//                R.id.nav_home -> "HOME"
-//                R.id.nav_gatepass -> "GATE PASS"
-//                else -> "HACKFEST"
-//            }
-
+        binding.appBarMain.scan.setOnClickListener {
+            replacefragment(AdminScanQrFragment());
+        }
+        binding.appBarMain.support.setOnClickListener {
+            showDialog()
         }
         navView.setupWithNavController(navController)
+
         navView.setCheckedItem(R.id.nav_home)
 
-
-        binding.appBarMain.scanQrButton.setOnClickListener {
-            navController.navigate(R.id.nav_scanqr)
-        }
     }
+
+    fun replacefragment(fragment: Fragment) {
+        val fragmentManager: FragmentManager = supportFragmentManager
+        val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.nav_host_fragment_content_main, fragment)
+        fragmentTransaction.commit()
+    }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
@@ -107,7 +125,37 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-
+    private fun showDialog() {
+        val dialog = Dialog(this)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setContentView(R.layout.bottomsheetlayout)
+        val editLayout = dialog.findViewById<LinearLayout>(R.id.layoutRule)
+        val shareLayout = dialog.findViewById<LinearLayout>(R.id.layoutAbout)
+        val uploadLayout = dialog.findViewById<LinearLayout>(R.id.layoutContact)
+        editLayout.setOnClickListener {
+            replacefragment(RulesFragment());
+            Toast.makeText(this@MainActivity, "Rules", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+        }
+        shareLayout.setOnClickListener {
+            replacefragment(AboutUsFragment());
+            Toast.makeText(this@MainActivity, "About Us", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+        }
+        uploadLayout.setOnClickListener {
+            replacefragment(ContactUsFragment());
+            Toast.makeText(this@MainActivity, "Contact Us", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+        }
+        dialog.show()
+        dialog.window!!.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window!!.attributes.windowAnimations = R.style.DialogAnimation
+        dialog.window!!.setGravity(Gravity.BOTTOM)
+    }
 
 
 }

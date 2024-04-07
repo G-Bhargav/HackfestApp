@@ -9,6 +9,4 @@ class LoginRepository(private  val apiLogin: AuthApiLogin): BaseRepository() {
     ) = safeApiCall {
         apiLogin.login(teamName,password)
     }
-
-
 }

@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.problemstatement.ProblemStatementFragment">
+    tools:context=".ui.problemstatement.ProblemStatementFragment"
+    android:background="@drawable/car_final">
 
-   <include
+
+<include
        android:id="@+id/loading_card"
        layout="@layout/loading_screen"
        android:layout_width="wrap_content"

@@ -25,13 +25,22 @@
     <style name="NavigationDrawerTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/genos_light</item>
         <item name="android:textSize">20dp</item>
+    </style>
 
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
     </style>
 
 
     <style name="circleImageView" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">20%</item>
+    </style>
+
+    <style name="circlelogoView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
     </style>
 
     <style name="BottomNavigationStyle">
