@@ -28,12 +28,12 @@
                 android:layout_height="50dp"
                 android:background="@color/transparent"
                 android:contentDescription="Menu"
-                android:src="@drawable/baseline_menu_24"
+                android:src="@drawable/person"
                 app:tint="@color/black" />
 
 
             <ImageButton
-                android:id="@+id/me"
+                android:id="@+id/support"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@color/transparent"
@@ -43,15 +43,15 @@
                 android:layout_alignParentEnd="true" />
 
             <ImageButton
-                android:id="@+id/met"
+                android:id="@+id/scan"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="32dp"
                 android:background="@color/transparent"
                 android:contentDescription="QR card"
                 android:src="@drawable/baseline_qr_code_scanner_24"
-                app:tint="@color/black"
-                android:layout_alignParentEnd="true"
-                android:layout_marginEnd="32dp"/>
+                app:tint="@color/black" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -136,7 +136,10 @@
     </androidx.cardview.widget.CardView>
 
 
-    <include layout="@layout/content_main" />
+    <include
+        layout="@layout/content_main"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
