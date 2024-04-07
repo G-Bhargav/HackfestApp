@@ -31,7 +31,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding : FragmentHomeBinding
-    private lateinit var videoView: VideoView
+    //private lateinit var videoView: VideoView
     private val path = "android.resource://com.iitism.hackfestapp/"+R.raw.hackfesttrailer
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,16 +48,16 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        videoView = binding.videoview
-        videoView.setVideoPath(path)
-        videoView.start()
-        videoView.setOnCompletionListener {
-            //videoView.start()
-        }
-        videoView.setOnClickListener {
-            if(videoView.isPlaying) videoView.pause()
-            else videoView.resume()
-        }
+//        videoView = binding.videoview
+//        videoView.setVideoPath(path)
+//        videoView.start()
+//        videoView.setOnCompletionListener {
+//            //videoView.start()
+//        }
+//        videoView.setOnClickListener {
+//            if(videoView.isPlaying) videoView.pause()
+//            else videoView.resume()
+//        }
 
         countDownHackfestStart()
     }
@@ -66,7 +66,7 @@ class HomeFragment : Fragment() {
 
     override fun onResume() {
 
-        videoView.start()
+        //videoView.start()
         super.onResume()
     }
 
