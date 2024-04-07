@@ -30,7 +30,8 @@ class ProblemStatementAdapter : RecyclerView.Adapter<ProblemStatementAdapter.Vie
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.binding.orgName.setText(list.get(position).name)
-        holder.binding.orgLink.setText(list.get(position).problem_url)
+        holder.binding.orgLink.setText("Click to open")
+
 
         Glide.with(holder.binding.root.context)
             .load(list.get(position).image_logo)

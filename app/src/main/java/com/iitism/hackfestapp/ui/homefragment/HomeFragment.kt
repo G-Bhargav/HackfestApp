@@ -31,8 +31,8 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding : FragmentHomeBinding
-    //private lateinit var videoView: VideoView
-    private val path = "android.resource://com.iitism.hackfestapp/"+R.raw.hackfesttrailer
+    private lateinit var videoView: VideoView
+    private val path = "android.resource://com.iitism.hackfestapp/"+R.raw.bck
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -48,11 +48,12 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-//        videoView = binding.videoview
+//        videoView = binding.videoView
 //        videoView.setVideoPath(path)
 //        videoView.start()
+//        videoView.scaleX = 3F
 //        videoView.setOnCompletionListener {
-//            //videoView.start()
+//            videoView.start()
 //        }
 //        videoView.setOnClickListener {
 //            if(videoView.isPlaying) videoView.pause()
