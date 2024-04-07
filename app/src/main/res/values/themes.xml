@@ -34,6 +34,10 @@
         <item name="cornerSize">20%</item>
     </style>
 
+    <style name="BottomNavigationStyle">
+    <item name="android:gravity">bottom</item>
+        <item name="android:lines">7</item></style>
+
 
     <style name="Theme.HackfestApp.AppBarOverlay" parent = "Theme.Material3.Dark">
         <item name="colorPrimary">@color/black</item>
