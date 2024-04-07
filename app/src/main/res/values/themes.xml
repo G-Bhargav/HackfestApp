@@ -38,6 +38,11 @@
         <item name="cornerSize">20%</item>
     </style>
 
+    <style name="circlelogoView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
     <style name="BottomNavigationStyle">
     <item name="android:gravity">bottom</item>
         <item name="android:lines">7</item></style>

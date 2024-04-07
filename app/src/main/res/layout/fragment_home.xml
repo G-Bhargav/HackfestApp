@@ -15,6 +15,15 @@
         android:layout_height="wrap_content"
         android:background="@color/transparent">
 
+<!--        <VideoView-->
+<!--            android:id="@+id/videoView"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            />-->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -26,11 +35,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="32dp"
+
+                android:background="@drawable/car_final"
+                app:shapeAppearance="@style/circlelogoView"
                 android:src="@drawable/logo_new" />
 
 
