@@ -85,6 +85,11 @@ class MainActivity : AppCompatActivity() {
         }
         navView.setupWithNavController(navController)
         navView.setCheckedItem(R.id.nav_home)
+
+
+        binding.appBarMain.scanQrButton.setOnClickListener {
+            navController.navigate(R.id.nav_scanqr)
+        }
     }
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)

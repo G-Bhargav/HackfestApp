@@ -43,7 +43,7 @@
                 android:layout_alignParentEnd="true" />
 
             <ImageButton
-                android:id="@+id/met"
+                android:id="@+id/scan_qr_button"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:background="@color/transparent"
