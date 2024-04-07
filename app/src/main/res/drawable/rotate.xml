@@ -3,7 +3,7 @@
 
     <item>
         <rotate
-            android:drawable="@drawable/logo_animated"
+            android:drawable="@drawable/hfgif"
             android:fillAfter="true"
             android:fromDegrees="0"
             android:pivotX="50%"

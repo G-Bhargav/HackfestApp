@@ -43,6 +43,7 @@
                 android:layout_alignParentEnd="true" />
 
             <ImageButton
+
                 android:id="@+id/scan"
                 android:layout_width="50dp"
                 android:layout_height="50dp"

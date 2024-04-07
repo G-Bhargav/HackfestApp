@@ -97,6 +97,9 @@ class MainActivity : AppCompatActivity() {
             showDialog()
         }
         navView.setupWithNavController(navController)
+
+        navView.setCheckedItem(R.id.nav_home)
+
     }
 
     fun replacefragment(fragment: Fragment) {
