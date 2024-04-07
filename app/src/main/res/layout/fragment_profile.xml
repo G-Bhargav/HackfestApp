@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="80dp"
+    android:background="@drawable/background_utra_final"
     tools:context=".ui.profilefragment.ProfileFragment">
 
     <androidx.appcompat.widget.LinearLayoutCompat

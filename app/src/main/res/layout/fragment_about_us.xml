@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.aboutus.AboutUsFragment"
-    android:background="@drawable/car_final">
+    android:background="@drawable/background_utra_final">
 
 
 <androidx.recyclerview.widget.RecyclerView
