@@ -40,7 +40,8 @@
                 android:layout_height="150dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="32dp"
-                android:background="@color/white"
+
+                android:background="@drawable/car_final"
                 app:shapeAppearance="@style/circlelogoView"
                 android:src="@drawable/logo_new" />
 
