@@ -2,6 +2,7 @@ package com.iitism.hackfestapp.ui.noticeboardfragment
 
 import android.app.ProgressDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +44,7 @@ class NoticeBoardFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
 //        progressDialog.show()
+        Log.d("logo","came upto here");
         binding.loadingCard.loadingCard.visibility = View.VISIBLE
         viewModel = ViewModelProvider(
             this, NoticeBoardViewModelFactory(

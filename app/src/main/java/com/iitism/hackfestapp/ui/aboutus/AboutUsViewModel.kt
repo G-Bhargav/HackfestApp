@@ -55,5 +55,4 @@ class AboutUsViewModel(
         return false
     }
 
-
 }

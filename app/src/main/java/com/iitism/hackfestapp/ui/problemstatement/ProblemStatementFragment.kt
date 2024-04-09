@@ -11,6 +11,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
+import android.widget.Toast
 import com.iitism.hackfestapp.R
 import com.iitism.hackfestapp.databinding.FragmentNoticeBoardBinding
 import com.iitism.hackfestapp.databinding.FragmentProblemStatementBinding
@@ -50,19 +51,35 @@ class ProblemStatementFragment : Fragment() {
             this, ProblemStatementViewModelFactory(
                 AboutUsRepository(
                     RetrofitInstance.api
-                )
+                ),
+                requireContext()
             )
         ).get(ProblemStatementViewModel::class.java)
         adapter = ProblemStatementAdapter()
         binding.recyclerView.adapter = adapter
+        networkCheckAndRun()
+        binding.retryButton.setOnClickListener {
+            networkCheckAndRun()
+        }
 
-        GlobalScope.launch(Dispatchers.IO) {
-            viewModel.getAllProblems()
-            this.launch(Dispatchers.Main) {
-                adapter.setProblems(viewModel.list)
-                binding.loadingCard.loadingCard.visibility = View.GONE
+    }
+
+    fun networkCheckAndRun(){
+        if(viewModel.isNetworkAvailable()){
+            binding.loadingCard.loadingCard.visibility = View.VISIBLE
+            GlobalScope.launch(Dispatchers.IO) {
+                viewModel.getAllProblems()
+                this.launch(Dispatchers.Main) {
+                    adapter.setProblems(viewModel.list)
+                    binding.loadingCard.loadingCard.visibility = View.GONE
+                }
+
             }
-
+        }
+        else{
+            Toast.makeText(context, "Network Error", Toast.LENGTH_SHORT).show()
+            binding.loadingCard.loadingCard.visibility = View.GONE
+            binding.retryButton.visibility = View.VISIBLE
         }
     }
 

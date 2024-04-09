@@ -13,6 +13,8 @@ data class Data(
     val Player_Email: String,
     val Player_Organisation: String,
     val Player_Type: String,
+    val man_hours : String,
+    val attendance_counter:String,
 //    val Reg: Reg,
 //    val Registration Time: String,
 //    val Specialization: String,
