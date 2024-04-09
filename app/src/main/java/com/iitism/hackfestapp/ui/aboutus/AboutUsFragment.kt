@@ -3,6 +3,7 @@ package com.iitism.hackfestapp.ui.aboutus
 import android.app.ProgressDialog
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import android.widget.Toast
 import com.iitism.hackfestapp.databinding.FragmentAboutUsBinding
 import com.iitism.hackfestapp.ui.aboutus.retrofit.AboutUsViewModelFactoy
 import com.iitism.hackfestapp.ui.aboutus.retrofit.RetrofitInstance
+import com.iitism.hackfestapp.ui.noticeboardfragment.NoticeBoardAdapter
+import com.iitism.hackfestapp.ui.noticeboardfragment.NoticeBoardViewModel
 import kotlinx.coroutines.*
 
 class AboutUsFragment : Fragment() {
@@ -19,7 +22,7 @@ class AboutUsFragment : Fragment() {
         fun newInstance() = AboutUsFragment()
     }
 
-    private val adapter = AboutUsAdapter()
+    private  lateinit var adapter :AboutUsAdapter
     private lateinit var binding : FragmentAboutUsBinding
     private lateinit var viewModel: AboutUsViewModel
     private lateinit var progressDialog: ProgressDialog
@@ -37,9 +40,15 @@ class AboutUsFragment : Fragment() {
     @OptIn(DelicateCoroutinesApi::class)
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
-        binding.loadingCard.visibility = View.VISIBLE
-        viewModel = ViewModelProvider(this,AboutUsViewModelFactoy(AboutUsRepository(RetrofitInstance.api),requireContext()))[AboutUsViewModel::class.java]
+        binding.loadingCard.loadingCard.visibility = View.VISIBLE
+        viewModel = ViewModelProvider(
+            this,AboutUsViewModelFactoy(
+                AboutUsRepository(
+                    RetrofitInstance.api
+                ),
+                requireContext()
+            )).get(AboutUsViewModel::class.java)
+        adapter = AboutUsAdapter()
         binding.recyclerView.adapter = adapter
         networkCheckAndRun()
         binding.retryButton.setOnClickListener {
@@ -52,12 +61,12 @@ class AboutUsFragment : Fragment() {
 
     fun networkCheckAndRun(){
         if(viewModel.isNetworkAvailable()){
-            binding.loadingCard.visibility = View.VISIBLE
+            binding.loadingCard.loadingCard.visibility = View.VISIBLE
             getAllOrganizers()
         }
         else{
             Toast.makeText(context, "Network Error",Toast.LENGTH_SHORT).show()
-            binding.loadingCard.visibility = View.GONE
+            binding.loadingCard.loadingCard.visibility = View.GONE
             binding.retryButton.visibility = View.VISIBLE
         }
     }
@@ -69,7 +78,7 @@ class AboutUsFragment : Fragment() {
             viewModel.getAllOrganizers()
             this.launch(Dispatchers.Main) {
                 adapter.setorganizerList(viewModel.organizerList)
-                binding.loadingCard.visibility = View.GONE
+                binding.loadingCard.loadingCard.visibility = View.GONE
             }
         }
     }

@@ -39,6 +39,8 @@ class ProfileFragment : Fragment() {
         binding.Mobile.text=sharedPref?.getLong("playerMobile",0).toString()
         binding.position.text=sharedPref?.getString("playerType","").toString()
         binding.nameText.text=sharedPref?.getString("playerName","").toString()
+        binding.Attendance.text="Attendence : "+sharedPref?.getString("attendance","").toString()
+        binding.manHours.text="Man Hours : "+sharedPref?.getString("manHours","").toString()
 
         binding.logout.setOnClickListener {
             val edit=sharedPref?.edit()
@@ -46,7 +48,6 @@ class ProfileFragment : Fragment() {
             edit?.apply()
             startActivity(Intent(this.context,authActivity::class.java))
             this.activity?.finish()
-
         }
 
 

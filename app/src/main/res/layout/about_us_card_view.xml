@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="10dp"
+    android:layout_marginVertical="5dp"
     android:backgroundTintMode="src_in"
     app:cardCornerRadius="20dp"
     app:cardElevation="10dp">
@@ -40,8 +40,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Name"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:textColor="@color/pitchblack"/>
 
             <TextView
                 android:id="@+id/org_position"
@@ -49,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="postion"
-                android:textSize="20sp" />
+                android:textSize="15sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -59,27 +60,27 @@
                 <com.google.android.material.imageview.ShapeableImageView
                     app:shapeAppearanceOverlay="@style/circleImageView"
                     android:id="@+id/org_linkedin"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
 
                     android:clickable="true"
 
                     android:contentDescription="Linkedin"
                     android:focusable="true"
-                    android:src="@drawable/linkedin_wlogo" />
+                    android:src="@drawable/link" />
 
                 <com.google.android.material.imageview.ShapeableImageView
                     app:shapeAppearanceOverlay="@style/circleImageView"
                     android:id="@+id/org_insta"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_marginStart="10dp"
 
                     android:clickable="true"
 
                     android:contentDescription="Instagram"
                     android:focusable="true"
-                    android:src="@drawable/insta_wlogo" />
+                    android:src="@drawable/inst" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

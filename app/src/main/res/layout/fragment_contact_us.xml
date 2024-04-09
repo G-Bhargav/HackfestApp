@@ -5,95 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.contactus.ContactUsFragment"
-    android:backgroundTint="@color/white"
-    >
+    android:background="@drawable/back_final">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="150dp"
         android:gravity="center_horizontal"
         >
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:gravity="center"
-                android:text="H"
-                android:textAlignment="center"
-                android:textColor="@color/gblue"
-                android:textSize="50sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:text="A"
-                android:textAlignment="center"
-                android:textColor="@color/gred"
-                android:textSize="50sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:text="C"
-                android:textAlignment="center"
-                android:textColor="@color/gyellow"
-                android:textSize="50sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:text="K"
-                android:textAlignment="center"
-                android:textColor="@color/ggreen"
-                android:textSize="50sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:text="F"
-                android:textAlignment="center"
-                android:textColor="@color/gblue"
-                android:textSize="50sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:text="E"
-                android:textAlignment="center"
-                android:textColor="@color/gred"
-                android:textSize="50sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:text="S"
-                android:textAlignment="center"
-                android:textColor="@color/gyellow"
-                android:textSize="50sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/lexend"
-                android:text="T"
-                android:textAlignment="center"
-                android:textColor="@color/ggreen"
-                android:textSize="50sp" />
-        </LinearLayout>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/number"
@@ -102,23 +22,21 @@
             android:layout_marginHorizontal="100dp"
             android:layout_marginTop="80dp"
             app:cardCornerRadius="20dp"
-            app:cardElevation="10dp">
-
+            app:cardElevation="10dp"
+            android:padding="10dp"
+           >
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@drawable/qr_card">
+                android:background="@drawable/ggg">
 
                 <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_height="41dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:src="@drawable/baseline_call_24"
-
-
-                    />
+                    android:src="@drawable/baseline_call_24" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -149,8 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@drawable/qr_card"
-                >
+                android:background="@drawable/ggg">
 
                 <ImageView
                     android:layout_width="50dp"
@@ -189,8 +106,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:background="@drawable/qr_card">
-
+                android:background="@drawable/ggg">
                 <ImageView
                     app:tint="@color/black"
                     android:layout_width="50dp"
@@ -237,9 +153,9 @@
 
                     <ImageView
                         android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_height="match_parent"
                         android:src="@drawable/linked_b_n_w"
-                        app:tint="@color/pitchblack" />
+                        app:tint="@color/gblue" />
 
                 </LinearLayout>
 
@@ -263,9 +179,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/insta_b_n_w"
-                        app:tint="@color/pitchblack" />
-
+                        android:src="@drawable/inst"/>
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -287,8 +201,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/fb_b_n_w"
-                        app:tint="@color/pitchblack" />
+                        android:src="@drawable/face" />
 
                 </LinearLayout>
 

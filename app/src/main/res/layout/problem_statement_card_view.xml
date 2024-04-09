@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="10dp"
+    android:layout_marginVertical="3dp"
     android:backgroundTintMode="src_in"
     app:cardCornerRadius="20dp"
     app:cardElevation="10dp">
@@ -12,31 +12,19 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/border"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:padding="10dp">
-        <RelativeLayout
+        android:padding="10dp"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/org_image"
             android:layout_width="100dp"
-            android:layout_height="100dp">
-            <com.google.android.material.imageview.ShapeableImageView
-                android:id="@+id/org_image"
-                app:shapeAppearanceOverlay="@style/circlelogoView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="@drawable/frame"
-                app:strokeWidth="1dp"
-                android:contentDescription="image"
-                android:src="@drawable/baseline_person_24_white" />
-            <ImageView
-                android:id="@+id/frame_image"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:src="@drawable/frame_trans"
-                android:scaleType="fitXY" />
-        </RelativeLayout>
-
-
+            android:layout_height="100dp"
+            android:background="@drawable/frame"
+            android:contentDescription="image"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            android:src="@drawable/baseline_person_24_white" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,8 +39,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Org Name"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/pitchblack"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

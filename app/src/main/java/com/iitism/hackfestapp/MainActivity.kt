@@ -1,6 +1,8 @@
 package com.iitism.hackfestapp
 
 import android.app.Dialog
+import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
@@ -14,6 +16,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import android.graphics.Color
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -25,6 +28,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.iitism.hackfestapp.auth.authActivity
+import com.iitism.hackfestapp.changePassword.ChangePassword
 import com.iitism.hackfestapp.databinding.ActivityMainBinding
 import com.iitism.hackfestapp.ui.aboutus.AboutUsFragment
 import com.iitism.hackfestapp.ui.adminscanqr.AdminScanQrFragment
@@ -49,6 +54,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(binding.root)
         val playerEmail=intent.getStringExtra("playerEmail")
         Log.d("mainActivityData",playerEmail.toString())
@@ -91,7 +97,11 @@ class MainActivity : AppCompatActivity() {
             replacefragment(ProfileFragment());
         }
         binding.appBarMain.scan.setOnClickListener {
-            replacefragment(AdminScanQrFragment());
+            val sharedPref=this?.getSharedPreferences("myPref", Context.MODE_PRIVATE);
+            if(sharedPref?.getString("email","")=="admin@admin.com")
+                replacefragment(AdminScanQrFragment());
+            else
+                Toast.makeText(this@MainActivity, "No Admin Access", Toast.LENGTH_SHORT).show()
         }
         binding.appBarMain.support.setOnClickListener {
             showDialog()
@@ -132,6 +142,7 @@ class MainActivity : AppCompatActivity() {
         val editLayout = dialog.findViewById<LinearLayout>(R.id.layoutRule)
         val shareLayout = dialog.findViewById<LinearLayout>(R.id.layoutAbout)
         val uploadLayout = dialog.findViewById<LinearLayout>(R.id.layoutContact)
+        val changePassword=dialog.findViewById<LinearLayout>(R.id.logout)
         editLayout.setOnClickListener {
             replacefragment(RulesFragment());
             Toast.makeText(this@MainActivity, "Rules", Toast.LENGTH_SHORT).show()
@@ -145,6 +156,11 @@ class MainActivity : AppCompatActivity() {
         uploadLayout.setOnClickListener {
             replacefragment(ContactUsFragment());
             Toast.makeText(this@MainActivity, "Contact Us", Toast.LENGTH_SHORT).show()
+            dialog.dismiss()
+        }
+        changePassword.setOnClickListener{
+            replacefragment(ChangePassword());
+            Toast.makeText(this@MainActivity, "Change Password", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
         dialog.show()

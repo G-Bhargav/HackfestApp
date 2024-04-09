@@ -1,5 +1,6 @@
 package com.iitism.hackfestapp.changePassword
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -23,7 +24,7 @@ class ChangePassword :BaseFragment<ChangeViewModel,FragmentChangePasswordBinding
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val intent=Intent(this.context, MainActivity::class.java)
-        val progressBar=binding.changepasswordProgressBar
+        val progressBar=binding.changepasswordProgressBar.loadingCard
 
         viewModel.changeResponse.observe(viewLifecycleOwner,Observer {
             when(it){
@@ -38,7 +39,7 @@ class ChangePassword :BaseFragment<ChangeViewModel,FragmentChangePasswordBinding
                 }
                 is Resource.Failure->{
                     Log.d("ChangePassword", it.toString())
-                    Toast.makeText(requireContext(), it.errorCode.toString(), Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Incorrect password", Toast.LENGTH_LONG).show()
                     val visibility=if(progressBar.visibility==View.GONE) View.VISIBLE
                     else View.GONE
                     progressBar.visibility=visibility
@@ -46,24 +47,26 @@ class ChangePassword :BaseFragment<ChangeViewModel,FragmentChangePasswordBinding
             }
         })
         binding.changePassButton.setOnClickListener {
-            val email=binding.changePasswordEmailEdit.text.toString()
+            val sharedPref=this.activity?.getSharedPreferences("myPref", Context.MODE_PRIVATE)
+            val email= sharedPref?.getString("email","");
+            Log.d("email",email.toString())
             val oldPassword=binding.OldPasswordEdit.text.toString()
             val newPassword=binding.NewPasswordEdit.text.toString()
             val visibility=if(progressBar.visibility==View.GONE) View.VISIBLE
             else View.GONE
             progressBar.visibility=visibility
 
-
-            if(email.isEmpty()){
-                Toast.makeText(context,"Player Email is required",Toast.LENGTH_LONG).show()
-            }else if(oldPassword.isEmpty()){
+            if(oldPassword.isEmpty()){
                 Toast.makeText(context,"Old Password is required",Toast.LENGTH_LONG).show()
+                progressBar.visibility=View.INVISIBLE
             }
             else if(newPassword.isEmpty()){
-                Toast.makeText(context,"new Password is required",Toast.LENGTH_LONG).show()
-
+                Toast.makeText(context,"New Password is required",Toast.LENGTH_LONG).show()
+                progressBar.visibility=View.INVISIBLE
             }else{
-                viewModel.changepassword(email,oldPassword,newPassword)
+                if (email != null) {
+                    viewModel.changepassword(email,oldPassword,newPassword)
+                }
             }
         }
     }

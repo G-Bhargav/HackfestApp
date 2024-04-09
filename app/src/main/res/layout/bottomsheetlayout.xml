@@ -14,7 +14,8 @@
             android:textColor="@color/black"
             android:layout_marginTop="5dp"
             android:textSize="20dp"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"/>
 
 
     <LinearLayout
@@ -23,7 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
-
 
         <ImageView
             android:layout_width="wrap_content"
@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:text="Rules"
             android:layout_marginLeft="30dp"
-            android:textSize="16sp"/>
+            android:textSize="17sp"/>
 
     </LinearLayout>
 
@@ -45,7 +45,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp">
-
 
         <ImageView
             android:layout_width="wrap_content"
@@ -57,7 +56,7 @@
             android:layout_height="wrap_content"
             android:text="About Us"
             android:layout_marginLeft="30dp"
-            android:textSize="16sp"/>
+            android:textSize="17sp"/>
 
     </LinearLayout>
 
@@ -68,7 +67,6 @@
         android:layout_height="wrap_content"
         android:padding="10dp">
 
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -77,9 +75,29 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Contact US"
+            android:text="Contact Us"
             android:layout_marginLeft="30dp"
-            android:textSize="16sp"/>
+            android:textSize="17sp"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/logout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:layout_width="29dp"
+            android:layout_height="28dp"
+            android:src="@drawable/cp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Change Password"
+            android:layout_marginLeft="30dp"
+            android:textSize="17sp"/>
 
     </LinearLayout>
 </LinearLayout>
