@@ -38,11 +38,12 @@ class ChangePassword :BaseFragment<ChangeViewModel,FragmentChangePasswordBinding
                     this.activity?.finish()
                 }
                 is Resource.Failure->{
-                    Log.d("ChangePassword", it.toString())
-                    Toast.makeText(requireContext(), "Incorrect password", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(),"Password Changed Successfully", Toast.LENGTH_LONG).show()
                     val visibility=if(progressBar.visibility==View.GONE) View.VISIBLE
                     else View.GONE
                     progressBar.visibility=visibility
+                    startActivity(intent)
+                    this.activity?.finish()
                 }
             }
         })
@@ -65,7 +66,13 @@ class ChangePassword :BaseFragment<ChangeViewModel,FragmentChangePasswordBinding
                 progressBar.visibility=View.INVISIBLE
             }else{
                 if (email != null) {
-                    viewModel.changepassword(email,oldPassword,newPassword)
+                    val sharedPref=this.activity?.getSharedPreferences("myPref",Context.MODE_PRIVATE)
+                    if(sharedPref?.getString("password","")!=oldPassword) {
+                        Toast.makeText(requireContext(), "Incorrect password", Toast.LENGTH_LONG).show()
+                        progressBar.visibility=View.INVISIBLE
+                    }
+                    else
+                        viewModel.changepassword(email,oldPassword,newPassword)
                 }
             }
         }
