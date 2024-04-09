@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashScreen"
-    android:background="#F9FBF8"
+
     android:id="@+id/splash_screen">
 
     <pl.droidsonroids.gif.GifImageView
         android:layout_width="400dp"
         android:layout_height="400dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/hf_trim" />
+        android:src="@drawable/hf_trans" />
 
 
 

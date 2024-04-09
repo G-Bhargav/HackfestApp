@@ -42,6 +42,7 @@
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="0dp"
                     android:layout_weight="1"
+
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
                     android:orientation="vertical"
@@ -73,6 +74,7 @@
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="0dp"
+
                     android:layout_weight="1"
                     android:layout_margin="8dp"
                     android:layout_height="wrap_content"
@@ -114,6 +116,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_margin="8dp"
+
                     android:layout_height="wrap_content"
                     android:background="@drawable/counter"
                     android:orientation="vertical">
