@@ -27,9 +27,9 @@ class ScanQrFragment : Fragment() {
     private lateinit var binding: FragmentScanqrBinding
     private lateinit var qrScanIntegrator: IntentIntegrator
     private var ID : String? = null
-    private val attendanceBaseURL = "https://hackfest-backend-3y92.onrender.com/attendance/"
-    private val refreshmentOneBaseURL = "https://hackfest-backend-3y92.onrender.com/refreshment_counter/"
-    private val refreshmentTwoBaseURL = "https://hackfest-backend-3y92.onrender.com/refreshment_counter_two/"
+    private val attendanceBaseURL = "https://hackfest-03s7.onrender.com/attendance/"
+    private val refreshmentOneBaseURL = "https://hackfest-03s7.onrender.com/refreshment_counter/"
+    private val refreshmentTwoBaseURL = "https://hackfest-03s7.onrender.com/refreshment_counter_two/"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

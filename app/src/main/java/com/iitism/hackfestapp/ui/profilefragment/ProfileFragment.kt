@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.compose.ui.text.toUpperCase
 import com.iitism.hackfestapp.R
 import com.iitism.hackfestapp.auth.authActivity
 import com.iitism.hackfestapp.databinding.FragmentProfileBinding
@@ -37,7 +38,6 @@ class ProfileFragment : Fragment() {
         binding.Email.text=sharedPref?.getString("email","")
         binding.Organization.text=sharedPref?.getString("playerOrganization","")
         binding.Mobile.text=sharedPref?.getLong("playerMobile",0).toString()
-        binding.position.text=sharedPref?.getString("playerType","").toString()
         binding.nameText.text=sharedPref?.getString("playerName","").toString()
         binding.Attendance.text="Attendence : "+sharedPref?.getString("attendance","").toString()
         binding.manHours.text="Man Hours : "+sharedPref?.getString("manHours","").toString()

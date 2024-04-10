@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit
 class AdminRetrofitInstance() {
 
 
-    private val Base_url = "https://hackfest-backend-3y92.onrender.com/"
+    private val Base_url = "https://hackfest-03s7.onrender.com"
 
 
     val api: AdminScanQrApi by lazy {

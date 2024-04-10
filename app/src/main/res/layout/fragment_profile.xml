@@ -62,28 +62,69 @@
                     android:textColor="@color/pitchblack"
                     android:textSize="25dp" />
 
-
-                <TextView
-                    android:id="@+id/position"
+                <androidx.cardview.widget.CardView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:text="position"
-                    android:textColor="@color/pitchblack"
-                    android:textSize="18dp" />
+                    android:layout_marginTop="5dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:textAlignment="center">
+
+
+                        <TextView
+                            android:id="@+id/Attendance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Attendance"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textColor="@color/pitchblack"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="5dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:textAlignment="center">
+
+
+                        <TextView
+                            android:id="@+id/manHours"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Man Hours"
+                            android:textAlignment="center"
+                            android:textSize="16sp"
+                            android:textColor="@color/pitchblack"/>
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="25dp"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="3dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="15dp">
+                        android:padding="15dp"
+                        >
 
                         <ImageView
                             android:layout_width="30dp"
@@ -160,55 +201,6 @@
 
                 </androidx.cardview.widget.CardView>
 
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="15dp"
-                        android:textAlignment="center">
-
-
-                        <TextView
-                            android:id="@+id/Attendance"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Attendance"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    app:cardCornerRadius="10dp"
-                    app:cardElevation="5dp">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:padding="15dp"
-                        android:textAlignment="center">
-
-
-                        <TextView
-                            android:id="@+id/manHours"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Man Hours"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
