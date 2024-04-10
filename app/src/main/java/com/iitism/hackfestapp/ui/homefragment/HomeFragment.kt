@@ -23,7 +23,6 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding : FragmentHomeBinding
-    private val path = "android.resource://com.iitism.hackfestapp/"+R.raw.bck
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -58,7 +57,6 @@ class HomeFragment : Fragment() {
 //            if(videoView.isPlaying) videoView.pause()
 //            else videoView.resume()
 //        }
-        binding.youtubePlayer.alpha= 0.5F;
         countDownHackfestStart()
     }
 

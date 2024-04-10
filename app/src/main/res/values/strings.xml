@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HackfestApp</string>
+    <string name="app_name">"HackFest'24"</string>
 
     <string name="menu_home">Home</string>
     <string name="menu_profile">Profile</string>
