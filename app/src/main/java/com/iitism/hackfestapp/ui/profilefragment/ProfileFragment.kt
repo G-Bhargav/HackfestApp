@@ -1,5 +1,6 @@
 package com.iitism.hackfestapp.ui.profilefragment
 
+import ProfileViewModelFactory
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
@@ -9,10 +10,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.compose.ui.text.toUpperCase
+import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import com.iitism.hackfestapp.R
 import com.iitism.hackfestapp.auth.authActivity
 import com.iitism.hackfestapp.databinding.FragmentProfileBinding
+import com.iitism.hackfestapp.retrofit.Resource
+import com.iitism.hackfestapp.ui.aboutus.AboutUsRepository
+import com.iitism.hackfestapp.ui.aboutus.retrofit.RetrofitInstance
+import com.iitism.hackfestapp.ui.problemstatement.ProblemStatementViewModel
+import com.iitism.hackfestapp.ui.problemstatement.ProblemStatementViewModelFactory
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 
 class ProfileFragment : Fragment() {
@@ -35,7 +46,8 @@ class ProfileFragment : Fragment() {
         val sharedPref=this.activity?.getSharedPreferences("myPref",Context.MODE_PRIVATE)
         binding.teamName.text=sharedPref?.getString("teamName","")
         Log.d("sharedPref",sharedPref?.getString("teamName","").toString())
-        binding.Email.text=sharedPref?.getString("email","")
+        val email = sharedPref?.getString("email","") ?: ""
+        binding.Email.text= email
         binding.Organization.text=sharedPref?.getString("playerOrganization","")
         binding.Mobile.text=sharedPref?.getLong("playerMobile",0).toString()
         binding.nameText.text=sharedPref?.getString("playerName","").toString()
@@ -50,15 +62,51 @@ class ProfileFragment : Fragment() {
             this.activity?.finish()
         }
 
-
         return view
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ProfileViewModel::class.java)
+        viewModel = ViewModelProvider(
+            this, ProfileViewModelFactory(
+                AboutUsRepository(
+                    RetrofitInstance.api
+                ),
+                requireContext()
+            )
+        ).get(ProfileViewModel::class.java)
+        val sharedPref=this.activity?.getSharedPreferences("myPref",Context.MODE_PRIVATE)
+        val editor=sharedPref?.edit()
+        val email = sharedPref?.getString("email","") ?: ""
+        viewModel.profileResponse.observe(viewLifecycleOwner, Observer { it ->
+            editor?.apply {
+                putString("attendance",it.data.attendance_counter)
+                putString("manHours", it.data.man_hours)
+                apply()
+            }
+            binding.Attendance.text="Attendence : "+sharedPref?.getString("attendance","").toString()
+            binding.manHours.text="Man Hours : "+sharedPref?.getString("manHours","").toString()
+        })
 
+        binding.btnRefresh.setOnClickListener{
+            lifecycleScope.launch {
+                binding.btnRefresh.visibility = View.GONE
+                if(viewModel.isNetworkAvailable()){
+                    Toast.makeText(context,"Updating",Toast.LENGTH_SHORT).show()
+                    val response = viewModel.getProfileData(email)
+                    if(response.isSuccessful){
 
+                    }
+                    Log.d("response", viewModel.profileResponse.toString())
+                }
+                else {
+                    lifecycleScope.launch(Dispatchers.Main) {
+                        Toast.makeText(context, "No Network", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                binding.btnRefresh.visibility = View.VISIBLE
+            }
+        }
 
     }
 

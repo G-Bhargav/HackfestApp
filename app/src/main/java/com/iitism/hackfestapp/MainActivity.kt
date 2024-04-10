@@ -97,7 +97,7 @@ class MainActivity : AppCompatActivity() {
             replacefragment(ProfileFragment());
         }
         binding.appBarMain.scan.setOnClickListener {
-            val sharedPref=this?.getSharedPreferences("myPref", Context.MODE_PRIVATE);
+            val sharedPref= this.getSharedPreferences("myPref", Context.MODE_PRIVATE);
             if(sharedPref?.getString("email","")=="admin@admin.com")
                 replacefragment(AdminScanQrFragment());
             else
