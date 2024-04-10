@@ -34,4 +34,29 @@ class GatePassViewModel : ViewModel() {
         )
     }
 
+    fun getAdminQrBitmapList(ID: String): List<GatePassModel> {
+//        val qrCodeBitmap = BarcodeEncoder().encodeBitmap(value, BarcodeFormat.QR_CODE, 300, 300)
+//        return qrCodeBitmap
+        return listOf(
+            GatePassModel(
+                QrImage = BarcodeEncoder().encodeBitmap(
+                    "https://www.hackfestiitism.com/refreshment",
+                    BarcodeFormat.QR_CODE,
+                    250,
+                    250
+                ),
+                "Refreshment - 1"
+            ),
+            GatePassModel(
+                QrImage = BarcodeEncoder().encodeBitmap(
+                    "https://www.hackfestiitism.com/refreshment_two",
+                    BarcodeFormat.QR_CODE,
+                    250,
+                    250,
+                ),
+                "Refreshment - 2"
+            )
+        )
+    }
+
 }
