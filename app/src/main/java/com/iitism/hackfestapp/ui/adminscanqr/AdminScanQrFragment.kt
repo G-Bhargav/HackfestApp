@@ -80,7 +80,10 @@ class AdminScanQrFragment : Fragment() {
                             }
                             else{
                                 lifecycleScope.launch(Dispatchers.Main) {
-                                    Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
+                                    if(url[0]=='i')
+                                        Toast.makeText(context, "Total Team Present", Toast.LENGTH_SHORT).show()
+                                    else
+                                        Toast.makeText(context, "Total Team Absent", Toast.LENGTH_SHORT).show()
                                 }
                                 viewModel.setupScanner(qrScanIntegrator)
                                 viewModel.performAction(qrScanIntegrator)
