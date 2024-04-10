@@ -40,10 +40,8 @@ class   AdminScanQrFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this,AdminScanQrViewModelFactory(requireContext()))[(AdminScanQrViewModel::class.java)]
         qrScanIntegrator = IntentIntegrator.forSupportFragment(this)
-
-
-            viewModel.setupScanner(qrScanIntegrator)
-            viewModel.performAction(qrScanIntegrator)
+        viewModel.setupScanner(qrScanIntegrator)
+        viewModel.performAction(qrScanIntegrator)
 
     }
 
