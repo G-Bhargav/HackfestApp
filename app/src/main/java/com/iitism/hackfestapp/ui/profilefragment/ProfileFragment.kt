@@ -89,14 +89,16 @@ class ProfileFragment : Fragment() {
         })
 
         binding.btnRefresh.setOnClickListener{
+            binding.loadingCard.loadingCard.visibility=View.VISIBLE;
             lifecycleScope.launch {
                 binding.btnRefresh.visibility = View.GONE
                 if(viewModel.isNetworkAvailable()){
-                    Toast.makeText(context,"Updating",Toast.LENGTH_SHORT).show()
                     val response = viewModel.getProfileData(email)
+                    var mess="Update Unsuccessfull"
                     if(response.isSuccessful){
-
+                        mess="Update Successfull"
                     }
+                    Toast.makeText(context, mess, Toast.LENGTH_SHORT).show()
                     Log.d("response", viewModel.profileResponse.toString())
                 }
                 else {
@@ -104,6 +106,7 @@ class ProfileFragment : Fragment() {
                         Toast.makeText(context, "No Network", Toast.LENGTH_SHORT).show()
                     }
                 }
+                binding.loadingCard.loadingCard.visibility=View.INVISIBLE;
                 binding.btnRefresh.visibility = View.VISIBLE
             }
         }
