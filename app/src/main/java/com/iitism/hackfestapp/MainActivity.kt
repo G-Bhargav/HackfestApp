@@ -17,6 +17,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.compose.animation.fadeIn
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
@@ -68,11 +69,15 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigationView.setOnNavigationItemSelectedListener {
             when(it.itemId){
-                R.id.nav_gatepass->replacefragment(GatePassFragment())
-                R.id.nav_timeline->replacefragment(TimelineFragment())
-                R.id.nav_home->replacefragment(HomeFragment())
-                R.id.nav_problemstatement->replacefragment(ProblemStatementFragment())
-                R.id.nav_noticeboard->replacefragment(NoticeBoardFragment())
+                R.id.nav_gatepass->replacefragment(GatePassFragment(),
+                    androidx.appcompat.R.anim.abc_fade_in, androidx.appcompat.R.anim.abc_fade_out)
+                R.id.nav_timeline->replacefragment(TimelineFragment(),
+                    androidx.appcompat.R.anim.abc_fade_in, androidx.appcompat.R.anim.abc_fade_out)
+                R.id.nav_home->replacefragment(HomeFragment(), androidx.appcompat.R.anim.abc_fade_in , androidx.appcompat.R.anim.abc_fade_out)
+                R.id.nav_problemstatement->replacefragment(ProblemStatementFragment(),
+                    com.bumptech.glide.R.anim.abc_fade_in, com.bumptech.glide.R.anim.abc_fade_out)
+                R.id.nav_noticeboard->replacefragment(NoticeBoardFragment(), androidx.appcompat.R.anim.abc_fade_in,
+                    androidx.appcompat.R.anim.abc_fade_out)
             }
             true
         }
@@ -93,15 +98,18 @@ class MainActivity : AppCompatActivity() {
             ),
             drawerLayout
         )
+        replacefragment(HomeFragment(),R.anim.slide_in_bottom,R.anim.slide_out_bottom);
+
         binding.appBarMain.menuButton.setOnClickListener{
-            replacefragment(ProfileFragment());
+            replacefragment(ProfileFragment(),R.anim.slide_in_left,R.anim.slide_out_right);
         }
         binding.appBarMain.scan.setOnClickListener {
             val sharedPref= this.getSharedPreferences("myPref", Context.MODE_PRIVATE);
             if(sharedPref?.getString("email","")=="admin@admin.com")
-                replacefragment(AdminScanQrFragment());
+                replacefragment(AdminScanQrFragment(), com.bumptech.glide.R.anim.abc_fade_in, androidx.appcompat.R.anim.abc_fade_out);
             else
-                replacefragment(ScanQrFragment());
+                replacefragment(ScanQrFragment(), androidx.appcompat.R.anim.abc_fade_in,
+                    androidx.appcompat.R.anim.abc_fade_out);
         }
         binding.appBarMain.support.setOnClickListener {
             showDialog()
@@ -112,9 +120,10 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun replacefragment(fragment: Fragment) {
+    fun replacefragment(fragment: Fragment,enterAnimation: Int, exitAnimation: Int) {
         val fragmentManager: FragmentManager = supportFragmentManager
         val fragmentTransaction: FragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.setCustomAnimations(enterAnimation,exitAnimation)
         fragmentTransaction.replace(R.id.nav_host_fragment_content_main, fragment)
         fragmentTransaction.commit()
     }
@@ -144,22 +153,22 @@ class MainActivity : AppCompatActivity() {
         val uploadLayout = dialog.findViewById<LinearLayout>(R.id.layoutContact)
         val changePassword=dialog.findViewById<LinearLayout>(R.id.logout)
         editLayout.setOnClickListener {
-            replacefragment(RulesFragment());
+            replacefragment(RulesFragment(),R.anim.slide_in_bottom,R.anim.slide_out_bottom);
             Toast.makeText(this@MainActivity, "Rules", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
         shareLayout.setOnClickListener {
-            replacefragment(AboutUsFragment());
+            replacefragment(AboutUsFragment(),R.anim.slide_in_bottom,R.anim.slide_out_bottom);
             Toast.makeText(this@MainActivity, "About Us", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
         uploadLayout.setOnClickListener {
-            replacefragment(ContactUsFragment());
+            replacefragment(ContactUsFragment(),R.anim.slide_in_bottom,R.anim.slide_out_bottom);
             Toast.makeText(this@MainActivity, "Contact Us", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
         changePassword.setOnClickListener{
-            replacefragment(ChangePassword());
+            replacefragment(ChangePassword(),R.anim.slide_in_bottom,R.anim.slide_out_bottom);
             Toast.makeText(this@MainActivity, "Change Password", Toast.LENGTH_SHORT).show()
             dialog.dismiss()
         }
