@@ -18,7 +18,7 @@
         android:layout_gravity="center"
         android:scaleX="2"
         android:scaleY="2"
-        android:src="@drawable/hf_trim"/>
+        android:src="@drawable/hf_trans"/>
 
 </LinearLayout>
 

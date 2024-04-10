@@ -154,7 +154,6 @@
                 android:textColorHint="@color/gray"
                 android:textSize="20sp"
                 android:fontFamily="@font/lexend"
-                app:passwordVisibilityToggleEnabled="true"
                 />
 
 
