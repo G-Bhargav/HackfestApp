@@ -17,7 +17,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.json.JSONException
 
-class   AdminScanQrFragment : Fragment() {
+class AdminScanQrFragment : Fragment() {
 
     companion object {
         fun newInstance() = AdminScanQrFragment()
@@ -30,19 +30,22 @@ class   AdminScanQrFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-//        binding = FragmentAdminScanQrBinding.inflate(layoutInflater)
-//        return binding.root
-        return null
+    ): View {
+        binding = FragmentAdminScanQrBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this,AdminScanQrViewModelFactory(requireContext()))[(AdminScanQrViewModel::class.java)]
         qrScanIntegrator = IntentIntegrator.forSupportFragment(this)
-        viewModel.setupScanner(qrScanIntegrator)
-        viewModel.performAction(qrScanIntegrator)
 
+        binding.scanQrButton.setOnClickListener {
+            binding.loadingCard.loadingCard.visibility=View.VISIBLE
+            binding.scanQrButton.visibility=View.INVISIBLE
+            viewModel.setupScanner(qrScanIntegrator)
+            viewModel.performAction(qrScanIntegrator)
+        }
     }
 
     @Deprecated("Deprecated in Java")
@@ -51,6 +54,8 @@ class   AdminScanQrFragment : Fragment() {
         if (result != null) {
             // If QRCode has no data.
             if (result.contents == null) {
+                binding.loadingCard.loadingCard.visibility=View.INVISIBLE
+                binding.scanQrButton.visibility=View.VISIBLE
                 Toast.makeText(activity, "No Result Found", Toast.LENGTH_LONG).show()
             } else {
                 // If QRCode contains data.
@@ -65,6 +70,8 @@ class   AdminScanQrFragment : Fragment() {
                         if(viewModel.isNetworkAvailable()){
                             val response = viewModel.markInOut(scannedtext = url)
                             if(response.isSuccessful){
+                                binding.loadingCard.loadingCard.visibility=View.INVISIBLE
+                                binding.scanQrButton.visibility=View.VISIBLE
                                 Log.d("AdminScanQR","Gate Pass : ${response.body()?.message}")
                                 GlobalScope.launch (Dispatchers.Main){
                                     Toast.makeText(getContext(), "Gate Pass : ${response.body()?.message}\"", Toast.LENGTH_SHORT).show()
@@ -74,7 +81,12 @@ class   AdminScanQrFragment : Fragment() {
                             }
                             else{
                                 GlobalScope.launch(Dispatchers.Main) {
-                                    Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show()
+                                    binding.loadingCard.loadingCard.visibility=View.INVISIBLE
+                                    binding.scanQrButton.visibility=View.VISIBLE
+                                    var mess="Total Team Absent"
+                                    if(url[0]=='i')
+                                        mess="Total Team Present"
+                                    Toast.makeText(getContext(), mess, Toast.LENGTH_SHORT).show()
                                 }
                                 viewModel.setupScanner(qrScanIntegrator)
                                 viewModel.performAction(qrScanIntegrator)
@@ -88,10 +100,14 @@ class   AdminScanQrFragment : Fragment() {
                     }
                 } catch (e: JSONException) {
                     e.printStackTrace()
+                    binding.loadingCard.loadingCard.visibility=View.INVISIBLE
+                    binding.scanQrButton.visibility=View.VISIBLE
                     Toast.makeText(activity, result.contents, Toast.LENGTH_LONG).show()
                 }
             }
         } else {
+            binding.loadingCard.loadingCard.visibility=View.INVISIBLE
+            binding.scanQrButton.visibility=View.VISIBLE
             super.onActivityResult(requestCode, resultCode, data)
         }
     }

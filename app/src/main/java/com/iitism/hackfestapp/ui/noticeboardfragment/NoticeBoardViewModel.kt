@@ -15,8 +15,9 @@ class NoticeBoardViewModel(private val repository: AboutUsRepository,
     val list = MutableLiveData<List<NoticeBoardModel>>()
 
 
-    suspend fun getAllOrganizers(){
-        val response = repository.getAllNotices()
+    suspend fun getAllOrganizers(end:String){
+        val response = repository.getAllNotices(end)
+        Log.d("aaaaa",response.toString());
 
         if (response.isSuccessful){
             list.postValue(response.body())

@@ -1,6 +1,7 @@
 package com.iitism.hackfestapp.ui.noticeboardfragment
 
 import android.app.ProgressDialog
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -69,8 +70,9 @@ class NoticeBoardFragment : Fragment() {
         if(viewModel.isNetworkAvailable()){
             binding.retryButton.visibility = View.GONE
             binding.loadingCard.loadingCard.visibility = View.VISIBLE
+            val sharedPref=this.activity?.getSharedPreferences("myPref", Context.MODE_PRIVATE)
             GlobalScope.launch(Dispatchers.IO) {
-                viewModel.getAllOrganizers()
+                viewModel.getAllOrganizers(sharedPref?.getString("teamId","").toString())
                 this.launch(Dispatchers.Main) {
                     adapter.setNotices(viewModel.list)
                     binding.loadingCard.loadingCard.visibility = View.GONE

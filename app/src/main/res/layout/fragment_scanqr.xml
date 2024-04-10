@@ -43,7 +43,7 @@
                         android:id="@+id/attendance_text"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Scan the QR code to mark attendance or obtain refreshments."
+                        android:text="Scan the QR code to obtain refreshments."
                         android:textAlignment="center"
                         android:textColor="@color/black"
                         android:textSize="30dp" />
@@ -57,7 +57,7 @@
                         android:elevation="30dp"
                         android:padding="10dp"
                         android:text="Scan Qr"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="20sp" />
                 </LinearLayout>
 

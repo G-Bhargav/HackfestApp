@@ -40,6 +40,7 @@ import com.iitism.hackfestapp.ui.noticeboardfragment.NoticeBoardFragment
 import com.iitism.hackfestapp.ui.problemstatement.ProblemStatementFragment
 import com.iitism.hackfestapp.ui.profilefragment.ProfileFragment
 import com.iitism.hackfestapp.ui.rules.RulesFragment
+import com.iitism.hackfestapp.ui.scanqr.ScanQrFragment
 import com.iitism.hackfestapp.ui.timelinefragment.TimelineFragment
 
 
@@ -101,7 +102,7 @@ class MainActivity : AppCompatActivity() {
             if(sharedPref?.getString("email","")=="admin@admin.com")
                 replacefragment(AdminScanQrFragment());
             else
-                Toast.makeText(this@MainActivity, "No Admin Access", Toast.LENGTH_SHORT).show()
+                replacefragment(ScanQrFragment());
         }
         binding.appBarMain.support.setOnClickListener {
             showDialog()

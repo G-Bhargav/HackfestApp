@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit
 
 class RemoteData {
     companion object{
-        private  const val BASE_URL="http://hackfest-backend-3y92.onrender.com/"
+        private  const val BASE_URL="https://hackfest-03s7.onrender.com"
     }
     fun <Api> BuildApi(
         api:Class<Api>

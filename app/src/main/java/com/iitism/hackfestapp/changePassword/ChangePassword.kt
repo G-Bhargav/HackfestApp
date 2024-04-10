@@ -16,6 +16,7 @@ import com.iitism.hackfestapp.R
 import com.iitism.hackfestapp.auth.Refractor.BaseFragment
 import com.iitism.hackfestapp.auth.Refractor.LoginViewModel
 import com.iitism.hackfestapp.auth.User
+import com.iitism.hackfestapp.auth.authActivity
 import com.iitism.hackfestapp.databinding.FragmentChangePasswordBinding
 import com.iitism.hackfestapp.retrofit.Resource
 
@@ -29,20 +30,28 @@ class ChangePassword :BaseFragment<ChangeViewModel,FragmentChangePasswordBinding
         viewModel.changeResponse.observe(viewLifecycleOwner,Observer {
             when(it){
                 is Resource.Success->{
+                    val sharedPref=this.activity?.getSharedPreferences("myPref",Context.MODE_PRIVATE)
                     Log.d("ChangePassword", it.value.message.toString())
                     Toast.makeText(requireContext(),"Password Changed Successfully", Toast.LENGTH_LONG).show()
                     val visibility=if(progressBar.visibility==View.GONE) View.VISIBLE
                     else View.GONE
                     progressBar.visibility=visibility
-                    startActivity(intent)
+                    val edit=sharedPref?.edit()
+                    edit?.clear()
+                    edit?.apply()
+                    startActivity(Intent(this.context, authActivity::class.java))
                     this.activity?.finish()
                 }
                 is Resource.Failure->{
+                    val sharedPref=this.activity?.getSharedPreferences("myPref",Context.MODE_PRIVATE)
                     Toast.makeText(requireContext(),"Password Changed Successfully", Toast.LENGTH_LONG).show()
                     val visibility=if(progressBar.visibility==View.GONE) View.VISIBLE
                     else View.GONE
                     progressBar.visibility=visibility
-                    startActivity(intent)
+                    val edit=sharedPref?.edit()
+                    edit?.clear()
+                    edit?.apply()
+                    startActivity(Intent(this.context,authActivity::class.java))
                     this.activity?.finish()
                 }
             }
