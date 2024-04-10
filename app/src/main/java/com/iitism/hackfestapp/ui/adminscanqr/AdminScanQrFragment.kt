@@ -17,7 +17,7 @@ import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import org.json.JSONException
 
-class AdminScanQrFragment : Fragment() {
+class   AdminScanQrFragment : Fragment() {
 
     companion object {
         fun newInstance() = AdminScanQrFragment()
@@ -30,9 +30,10 @@ class AdminScanQrFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
-        binding = FragmentAdminScanQrBinding.inflate(layoutInflater)
-        return binding.root
+    ): View? {
+//        binding = FragmentAdminScanQrBinding.inflate(layoutInflater)
+//        return binding.root
+        return null
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -40,10 +41,10 @@ class AdminScanQrFragment : Fragment() {
         viewModel = ViewModelProvider(this,AdminScanQrViewModelFactory(requireContext()))[(AdminScanQrViewModel::class.java)]
         qrScanIntegrator = IntentIntegrator.forSupportFragment(this)
 
-        binding.scanQrButton.setOnClickListener {
+
             viewModel.setupScanner(qrScanIntegrator)
             viewModel.performAction(qrScanIntegrator)
-        }
+
     }
 
     @Deprecated("Deprecated in Java")
