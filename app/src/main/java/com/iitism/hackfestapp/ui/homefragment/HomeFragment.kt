@@ -58,7 +58,6 @@ class HomeFragment : Fragment() {
 //            if(videoView.isPlaying) videoView.pause()
 //            else videoView.resume()
 //        }
-        binding.youtubePlayer.alpha= 0.5F;
         countDownHackfestStart()
     }
 
