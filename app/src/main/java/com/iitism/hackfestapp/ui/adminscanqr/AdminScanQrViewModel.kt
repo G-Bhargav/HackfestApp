@@ -20,16 +20,22 @@ class AdminScanQrViewModel(
 ) : ViewModel() {
 
 
-    suspend fun markInOut(scannedtext: String) : Response<adminScanResponse> {
-        val response : Response<adminScanResponse> = AdminRetrofitInstance().api.takeAttendance(endpoint = scannedtext)
-        if(response.isSuccessful){
-            Log.d("Scan qr","${response.body()}")
+    suspend fun markInOut(scannedtext: String) : Response<adminScanResponse>? {
+        Log.i("link",scannedtext)
+        try{
+            val response : Response<adminScanResponse> = AdminRetrofitInstance().api.takeAttendance(endpoint = scannedtext)
+            if(response.isSuccessful){
+                Log.d("Scan qr","${response.body()}")
+            }
+            else{
+                Log.d("Scan qr","Failed ")
+            }
+            return response
         }
-        else{
-            Log.d("Scan qr","Failed ")
+        catch (e: Exception){
+            Log.e("error in markinout",e.message.toString())
+            return  null
         }
-        return response
-
     }
 
 

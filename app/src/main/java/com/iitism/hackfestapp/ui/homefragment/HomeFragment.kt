@@ -1,26 +1,18 @@
 package com.iitism.hackfestapp.ui.homefragment
 
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.provider.MediaStore.Video
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import android.widget.VideoView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.iitism.hackfestapp.R
 import com.iitism.hackfestapp.databinding.FragmentHomeBinding
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
-import java.util.concurrent.TimeUnit
 
 
 class HomeFragment : Fragment() {
@@ -31,13 +23,20 @@ class HomeFragment : Fragment() {
 
     private lateinit var viewModel: HomeViewModel
     private lateinit var binding : FragmentHomeBinding
-    private lateinit var videoView: VideoView
     private val path = "android.resource://com.iitism.hackfestapp/"+R.raw.bck
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        return inflater.inflate(R.layout.fragment_home, container, false)
+
+        // Timer:
+        object : CountDownTimer(100, 100) {
+            override fun onTick(millisUntilFinished: Long) {
+            }
+            override fun onFinish() {
+                binding.logo.animate().alpha(1F).setDuration(1250).scaleX(3f).scaleY(3f).rotation(720f).setDuration(2000).start()
+            }
+        }.start()
         binding = FragmentHomeBinding.inflate(layoutInflater)
         val view = binding.root
         return  view
@@ -59,7 +58,7 @@ class HomeFragment : Fragment() {
 //            if(videoView.isPlaying) videoView.pause()
 //            else videoView.resume()
 //        }
-
+        binding.youtubePlayer.alpha= 0.5F;
         countDownHackfestStart()
     }
 

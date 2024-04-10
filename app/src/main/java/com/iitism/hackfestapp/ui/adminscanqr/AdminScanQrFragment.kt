@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.lifecycleScope
 import com.google.zxing.integration.android.IntentIntegrator
 import com.iitism.hackfestapp.R
 import com.iitism.hackfestapp.databinding.FragmentAdminScanQrBinding
@@ -66,35 +67,28 @@ class AdminScanQrFragment : Fragment() {
 //                    viewModel.markInOut(url)
 //                    viewModel.setupScanner(qrScanIntegrator)
 //                    viewModel.performAction(qrScanIntegrator)
-                    GlobalScope.launch(Dispatchers.IO) {
+                    lifecycleScope.launch(Dispatchers.IO) {
                         if(viewModel.isNetworkAvailable()){
                             val response = viewModel.markInOut(scannedtext = url)
-                            if(response.isSuccessful){
-                                binding.loadingCard.loadingCard.visibility=View.INVISIBLE
-                                binding.scanQrButton.visibility=View.VISIBLE
+                            if( response != null && response.isSuccessful){
                                 Log.d("AdminScanQR","Gate Pass : ${response.body()?.message}")
-                                GlobalScope.launch (Dispatchers.Main){
-                                    Toast.makeText(getContext(), "Gate Pass : ${response.body()?.message}\"", Toast.LENGTH_SHORT).show()
+                                lifecycleScope.launch (Dispatchers.Main){
+                                    Toast.makeText(context, "Gate Pass : ${response.body()?.message}\"", Toast.LENGTH_SHORT).show()
                                 }
                                 viewModel.setupScanner(qrScanIntegrator)
                                 viewModel.performAction(qrScanIntegrator)
                             }
                             else{
-                                GlobalScope.launch(Dispatchers.Main) {
-                                    binding.loadingCard.loadingCard.visibility=View.INVISIBLE
-                                    binding.scanQrButton.visibility=View.VISIBLE
-                                    var mess="Total Team Absent"
-                                    if(url[0]=='i')
-                                        mess="Total Team Present"
-                                    Toast.makeText(getContext(), mess, Toast.LENGTH_SHORT).show()
+                                lifecycleScope.launch(Dispatchers.Main) {
+                                    Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show()
                                 }
                                 viewModel.setupScanner(qrScanIntegrator)
                                 viewModel.performAction(qrScanIntegrator)
                             }
                         }
-                        else{
-                            GlobalScope.launch(Dispatchers.Main) {
-                                Toast.makeText(getContext(),"No Network",Toast.LENGTH_SHORT).show()
+                        else {
+                            lifecycleScope.launch(Dispatchers.Main) {
+                                Toast.makeText(context, "No Network", Toast.LENGTH_SHORT).show()
                             }
                         }
                     }

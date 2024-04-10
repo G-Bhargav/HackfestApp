@@ -129,27 +129,25 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_marginTop="20dp"
-                        android:background="@drawable/counter"
                         android:gravity="center"
-                        android:orientation="vertical"
-                        android:padding="10dp">
-
+                        android:orientation="vertical">
                         <TextView
                             android:id="@+id/txtSecond"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:fontFamily="@font/genos_light"
+                            android:fontFamily="@font/lexend_semi_bold"
                             android:gravity="center"
                             android:textColor="@color/black"
                             android:textSize="20sp"
-                            android:textStyle="bold" />
+                            android:textStyle="bold"
+                            android:padding="10dp"/>
 
                         <TextView
                             android:id="@+id/txt_Second"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="@font/genos_light"
+                            android:fontFamily="@font/lexend"
                             android:gravity="center_horizontal"
                             android:text="@string/seconds"
                             android:textAppearance="?android:attr/textAppearanceSmall"
@@ -162,7 +160,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:fontFamily="@font/genos_bold"
+                        android:fontFamily="@font/lexend"
                         android:textAlignment="center"
                         android:text="Display this to obtain refreshments before the timer runs out."
                         android:textColor="@color/black"
@@ -174,7 +172,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:background="@drawable/button_background"
-                        android:fontFamily="@font/genos_light"
+                        android:fontFamily="@font/lexend"
                         android:text="Dismiss"
                         android:textColor="@color/black" />
 
