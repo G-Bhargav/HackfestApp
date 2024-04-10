@@ -59,7 +59,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val playerEmail=intent.getStringExtra("playerEmail")
         Log.d("mainActivityData",playerEmail.toString())
-
         val drawerLayout:DrawerLayout  = binding.drawerLayout
         val navView:NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)

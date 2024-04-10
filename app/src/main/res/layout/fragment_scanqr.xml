@@ -91,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:text="Attendance Marked"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="30dp" />
 
 
@@ -140,7 +140,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/genos_light"
                             android:gravity="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/black"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
@@ -165,7 +165,7 @@
                         android:fontFamily="@font/genos_bold"
                         android:textAlignment="center"
                         android:text="Display this to obtain refreshments before the timer runs out."
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:textSize="20dp" />
 
                     <androidx.appcompat.widget.AppCompatButton
@@ -176,7 +176,7 @@
                         android:background="@drawable/button_background"
                         android:fontFamily="@font/genos_light"
                         android:text="Dismiss"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/black" />
 
 
                 </LinearLayout>

@@ -40,9 +40,12 @@ class GatePassFragment : Fragment() {
 
         val sharedPreferences :SharedPreferences? = this.activity?.getSharedPreferences("myPref",Context.MODE_PRIVATE)
         val ID = sharedPreferences?.getString("teamId","")
-        qrlist = viewModel.getQrBitmapList(ID!!)
-        binding.viewpager.adapter = GatePassAdapter(this.context,qrlist)
+        if(sharedPreferences?.getString("email","")=="admin@admin.com")
+            qrlist = viewModel.getAdminQrBitmapList(ID!!)
+        else
+            qrlist = viewModel.getQrBitmapList(ID!!)
 
+        binding.viewpager.adapter = GatePassAdapter(this.context,qrlist)
         binding.viewpager.offscreenPageLimit = 1
 
 // Add a PageTransformer that translates the next and previous items horizontally
