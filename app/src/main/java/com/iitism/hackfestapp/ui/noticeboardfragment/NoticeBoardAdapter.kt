@@ -14,7 +14,7 @@ class NoticeBoardAdapter : RecyclerView.Adapter<NoticeBoardAdapter.ViewHolder>()
 
     fun setNotices ( list : MutableLiveData<List<NoticeBoardModel>>)
     {
-        this.list = list.value!!.toMutableList()
+        this.list = list.value!!.toMutableList().asReversed()
         notifyDataSetChanged()
     }
 
