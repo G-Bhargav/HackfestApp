@@ -14,6 +14,8 @@ data class Data(
     val man_hours : String,
     val attendance_counter:String,
     val Team_Id: String,
+    val team_length: String,
+    val rules:String,
     val Team_Name: String,
     val password: String,
     val problem_statement_and_solution: String,

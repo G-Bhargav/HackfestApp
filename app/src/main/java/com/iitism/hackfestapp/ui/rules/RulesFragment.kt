@@ -1,5 +1,6 @@
 package com.iitism.hackfestapp.ui.rules
 
+import android.content.Context
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -21,10 +22,12 @@ class RulesFragment : Fragment() {
 
         binding = FragmentRulesBinding.inflate(inflater)
 
+        val sharedPref=this.activity?.getSharedPreferences("myPref", Context.MODE_PRIVATE)
+
         binding.webview.webViewClient = WebViewClient()
         binding.webview.settings.javaScriptEnabled = true
         binding.webview.settings.setSupportZoom(true)
-        binding.webview.loadUrl("https://drive.google.com/file/d/1oDBDm6A_WH420O46QHPTVK80wgHXgX9x/view?usp=share_link")
+        binding.webview.loadUrl(sharedPref?.getString("rules","").toString())
 
         return binding.root
     }

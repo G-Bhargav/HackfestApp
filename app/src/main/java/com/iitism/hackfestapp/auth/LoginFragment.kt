@@ -54,6 +54,8 @@ class loginFragment : BaseFragment<LoginViewModel,FragmentLoginBinding, LoginRep
                         putString("problemStatement",it.value.data.problem_statement_and_solution)
                         putString("playerOrganization",it.value.data.Player_Organisation)
                         putString("password",it.value.data.password)
+                        putString("team_length",it.value.data.team_length)
+                        putString("rules",it.value.data.rules)
                         apply()
                     }
                     val visibility=if(progressBar.visibility==View.GONE) View.VISIBLE

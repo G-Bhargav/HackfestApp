@@ -51,7 +51,7 @@ class ProfileFragment : Fragment() {
         binding.Organization.text=sharedPref?.getString("playerOrganization","")
         binding.Mobile.text=sharedPref?.getLong("playerMobile",0).toString()
         binding.nameText.text=sharedPref?.getString("playerName","").toString()
-        binding.Attendance.text="Attendence : "+sharedPref?.getString("attendance","").toString()
+        binding.Attendance.text="Attendence : "+sharedPref?.getString("attendance","").toString()+" / "+sharedPref?.getString("team_length","").toString()
         binding.manHours.text="Man Hours : "+sharedPref?.getString("manHours","").toString()
 
         binding.logout.setOnClickListener {
@@ -84,7 +84,7 @@ class ProfileFragment : Fragment() {
                 putString("manHours", it.data.man_hours)
                 apply()
             }
-            binding.Attendance.text="Attendence : "+sharedPref?.getString("attendance","").toString()
+            binding.Attendance.text="Attendence : "+sharedPref?.getString("attendance","").toString()+" / "+sharedPref?.getString("team_length","").toString()
             binding.manHours.text="Man Hours : "+sharedPref?.getString("manHours","").toString()
         })
 

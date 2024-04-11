@@ -60,9 +60,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         val playerEmail=intent.getStringExtra("playerEmail")
         Log.d("mainActivityData",playerEmail.toString())
-        val drawerLayout:DrawerLayout  = binding.drawerLayout
-        val navView:NavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_content_main)
+//        val drawerLayout:DrawerLayout  = binding.drawerLayout
+//        val navView:NavigationView = binding.navView
+//        val navController = findNavController(R.id.nav_host_fragment_content_main)
         val bottomNavigationView: BottomNavigationView=binding.appBarMain.bottomNavigationView;
 
         bottomNavigationView.setSelectedItemId(R.id.nav_home);
@@ -81,23 +81,23 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
-
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home,
-                R.id.nav_profile,
-                R.id.nav_timeline,
-                R.id.nav_problemstatement,
-                R.id.nav_noticeboard,
-                R.id.nav_aboutus,
-                R.id.nav_contactus,
-                R.id.nav_rules,
-                R.id.nav_scanqr,
-                R.id.nav_gatepass,
-                R.id.nav_adminscanqr
-            ),
-            drawerLayout
-        )
+//
+//        appBarConfiguration = AppBarConfiguration(
+//            setOf(
+//                R.id.nav_home,
+//                R.id.nav_profile,
+//                R.id.nav_timeline,
+//                R.id.nav_problemstatement,
+//                R.id.nav_noticeboard,
+//                R.id.nav_aboutus,
+//                R.id.nav_contactus,
+//                R.id.nav_rules,
+//                R.id.nav_scanqr,
+//                R.id.nav_gatepass,
+//                R.id.nav_adminscanqr
+//            ),
+//            drawerLayout
+//        )
         replacefragment(HomeFragment(),R.anim.slide_in_bottom,R.anim.slide_out_bottom);
 
         binding.appBarMain.menuButton.setOnClickListener{
@@ -114,9 +114,9 @@ class MainActivity : AppCompatActivity() {
         binding.appBarMain.support.setOnClickListener {
             showDialog()
         }
-        navView.setupWithNavController(navController)
+//        navView.setupWithNavController(navController)
 
-        navView.setCheckedItem(R.id.nav_home)
+//        navView.setCheckedItem(R.id.nav_home)
 
     }
 
@@ -133,15 +133,15 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-    @Deprecated("Deprecated in Java")
-    override fun onBackPressed() {
-        if(binding.drawerLayout.isDrawerOpen(GravityCompat.START)){
-            binding.drawerLayout.closeDrawer(GravityCompat.START)
-        }
-        else{
-            super.onBackPressed()
-        }
-    }
+//    @Deprecated("Deprecated in Java")
+//    override fun onBackPressed() {
+//        if(binding.drawerLayout.isDrawerOpen(GravityCompat.START)){
+//            binding.drawerLayout.closeDrawer(GravityCompat.START)
+//        }
+//        else{
+//            super.onBackPressed()
+//        }
+//    }
 
 
     private fun showDialog() {

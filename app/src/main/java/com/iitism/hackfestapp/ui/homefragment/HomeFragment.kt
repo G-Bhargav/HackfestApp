@@ -76,7 +76,7 @@ class HomeFragment : Fragment() {
                 try {
                     val currentDate = Date()
                     val dateFormat = SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
-                    val futureDate: Date = dateFormat.parse("2024-4-19 12:00:00")
+                    val futureDate: Date = dateFormat.parse("2024-4-19 00:00:00")
                     if (!currentDate.after(futureDate)) {
                         var diff: Long = (futureDate.getTime()
                                 - currentDate.getTime())
@@ -94,8 +94,8 @@ class HomeFragment : Fragment() {
                     }
                     else {
                         countDownHackfestEnd()
-                        binding.textcounterdown.text = "Time Remaining"
-                        binding.LinearLayout1.visibility = View.GONE
+                        binding.textcounterdown.text = "HackFest is Live Now !!!"
+                        binding.LinearLayout.visibility = View.GONE
                     }
                 } catch (e: Exception) {
                     e.printStackTrace()
